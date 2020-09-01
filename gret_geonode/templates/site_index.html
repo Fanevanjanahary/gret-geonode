@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load base_tags %}
+{% comment %}
+This is where you can override the hero area block. You can simply modify the content below or replace it wholesale to meet your own needs.
+{% endcomment %}
+{% block hero %}
+<div class="jumbotron">
+    <section id="showcase">
+        <div class="row">
+          <div class="container text-center">
+            <div class="row home-facets">
+            {% with facet_type='home' %}
+             {% facets as facets %}
+              <div class="col-md-4 index-volet">
+                <p><a href="{% url "layer_browse" %}"><i class="fa fas fa-building fa-4x "></i></a></p>
+                <h2>Infrastructure</h2>
+                <p>Participe aux études de faisabilité socio-technico-économiques et à la réalisation des microcentrales hydroélectriques et réseaux électriques concernés.</p>
+              </div>
+              <div class="col-md-4 index-volet">
+                <p><a href="{% url "maps_browse" %}"><i class="fa fas fa-users fa-4x"></i></a></p>
+                <h2>SOCIO-ECO</h2>
+                <p>Accès à des Micro crédits (partenariat avec institutions + différentes solutions) : certains des entrepreneurs par commune ont eu accès aux différents crédits.</p>
+
+              </div>
+              <div class="col-md-4 index-volet">
+                <p><a href="{% url "document_browse" %}"><i class="fa fas fa-leaf fa-4x"></i></a></p>
+                <h2>Environnement</h2>
+                <p>Assurer la bonne gestion et la partage de l’eau entre le barrage hydroéléctrique et l’irrigation des périmètres en aval du barrage.</p>
+              </div>
+
+            {% endwith %}
+            </div>
+          </div>
+        </div>
+      </section>
+</div>
+
+{% endblock hero %}
+
+{% block mainbody %}
+{% endblock mainbody %}
